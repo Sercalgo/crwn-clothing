@@ -13,6 +13,9 @@
     font-weight: bolder;
     border: none;
     cursor: pointer;
+    border-radius: 8px;
+    margin: 5px;
+
 
     &:hover {
         background-color: white;
@@ -25,13 +28,9 @@
         color: white;
 
         &:hover {
-            background-color: #357ae8;
+            background-color: #5a94f2;
             border: none;
         }
     }
 
-    @media (max-width: 768px) {
-        margin-left: -50px;
-        justify-content: center;
-    }
 }

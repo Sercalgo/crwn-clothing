@@ -41,16 +41,20 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
     }
     return userRef;
 }
-
+// Initialize Firebase
 firebase.initializeApp(config);
 
+// make auth and firestores references
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
+// Create an instance of the Google provider object
 const provider = new firebase.auth.GoogleAuthProvider();
+// This allows a user who has multiple accounts at the authorization server to select amongst the multiple accounts
 provider.setCustomParameters({
     prompt: 'select_account'
 });
+// To sign in with a pop-up window
 export const signInWithGoogle = () => auth.signInWithPopup(provider);
 
 export default firebase;
