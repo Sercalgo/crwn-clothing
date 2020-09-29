@@ -16,22 +16,20 @@ class SignIn extends React.Component {
       password: "",
     };
   }
-  // to avoid the default action of submit
+
   handleSubmit = async (event) => {
     event.preventDefault();
 
     const { email, password } = this.state;
 
     try {
-      // Pass the mail and password and wait till we auth the values with firebase
       await auth.signInWithEmailAndPassword(email, password);
-      // if that succed we sign in and we reset the values
       this.setState({ email: "", password: "" });
     } catch (error) {
       console.log(error);
     }
   };
-  // To know if we write in the email or password box
+
   handleChange = (event) => {
     const { value, name } = event.target;
 
@@ -65,11 +63,10 @@ class SignIn extends React.Component {
             <CustomButton type="submit"> Sign in </CustomButton>
             <CustomButton
               type="button"
-              // To sign in with a pop-up window
               onClick={signInWithGoogle}
               isGoogleSignIn
             >
-              Sign in with google
+              Sign in with Google
             </CustomButton>
           </div>
         </form>

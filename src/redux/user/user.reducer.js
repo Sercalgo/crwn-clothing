@@ -5,14 +5,14 @@ const INITIAL_STATE = {
 // Here an action is going to update our state. We pass a default parameter value in this case is Initial_state
 const userReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case 'SET-CURRENT-USER':
+        case 'SET_CURRENT_USER':
             return {
                 ...state,
                 currentUser: action.payload
-            }
-            default:
-                return state;
+            };
+        default:
+            return state;
     }
-}
+};
 
 export default userReducer;

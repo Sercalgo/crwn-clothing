@@ -18,7 +18,7 @@ class SignUp extends React.Component {
       confirmPassword: "",
     };
   }
-  // We get the information when user submit
+
   handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -28,7 +28,7 @@ class SignUp extends React.Component {
       alert("passwords don't match");
       return;
     }
-    // sign up the user
+
     try {
       const { user } = await auth.createUserWithEmailAndPassword(
         email,
